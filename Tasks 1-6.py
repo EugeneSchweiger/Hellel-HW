@@ -91,11 +91,11 @@ while i<6:
 print("____________________________________________");
 print("Task #6");
 a=150;
-b=14;
-c=22000000;
+b=-2;
+c=220;
 print("a=",a);
 print("b=",b);
 print("c=",c);
-print((math.log1p(c)/-b)**4)
-print("Result of (ln(1+c)/-b)**4+|a| is", round(((((math.log1p(c)/-b)**4))+math.fabs(a)),5));
+print("Result of (ln(1+c)/-b)**4+|a| is", round((((math.log1p(c)/-b)**4)+math.fabs(a)),5));
 print("End of Task #6");
+print("____________________________________________");
