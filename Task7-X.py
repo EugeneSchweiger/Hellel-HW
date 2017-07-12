@@ -1,0 +1,10 @@
+x = ["1", 2, 3, "4", 100]
+print(x)
+print(len(x))
+x.append("more")
+print(x)
+print(len(x))
+list.insert(x,10,"new")
+print(x)
+print(len(x))
+print("coding never sleep!")
