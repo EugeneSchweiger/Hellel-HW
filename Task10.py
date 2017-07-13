@@ -1,23 +1,38 @@
 writer=input("Enter writer's name*birthday date*death date \n date format: \"YYYY-MM-DD\"")
-w_list1=writer.split("*")
-b_date1=w_list1[1].split("-")
-d_date2=w_list1[2].split("-")
-if len(w_list1[1])==10 and len(w_list1[2])==10:
-    a=0
-    while a<len(b_date1):
-        b_date1[a]= int(b_date1[a])
-        a=a+1
-    a=0
-    while a<len(d_date2):
-        d_date2[a]= int(d_date2[a])
-        a=a+1
-    age=d_date2[0]-b_date1[0]
-    w_list1[0]="\""+w_list1[0]+"\"" #Предположим кон котэ нация.
-    print(w_list1[0],",",age)
+w_list=writer.split("*")
+
+if len(w_list[1])==10 :
+    b_year = int(w_list[1][:4])#b_year= Birthday_year
+    d_year = int(w_list[2][:4])#d_year= Death year
+
 else:
-    print("You have entered wrong writer's dates(year)", )
-#Code is working but not complite
-#There is a promlem of placing 8 more conditions after
-#reformating inputed text. If month,days out of range of 0 and 12\31
-#then code should give mesage of wrong date input. Problem is:
-#Where is the place for those conditions?!
+    print("Incorrect date")
+b_month= int(w_list[1][5:7])
+b_day=int(w_list[1][8:10])
+d_month=int(w_list[2][5:7])
+d_day=int(w_list[2][8:10])
+#Next code blosk cam be smaller by double-comparing like 0>= var>=13 ,
+# but seems I'm doing something wrong and code not working with me/
+if b_month <= 0:
+    print("wrong birthday month")
+elif b_month >=13:
+    print("wrong birthday month")
+elif d_month <=0:
+    print("wrong death month")
+elif d_month >=13:
+    print("wrong death month")
+elif b_day <= 0:
+    print("wrong birthday day")
+elif b_day >= 31:
+    print("wrong birthday day")
+elif d_day <= 0:
+    print("wrong death day")
+elif d_day >= 31:
+    print("wrong death day")
+else:
+    age=(d_year-b_year)
+    if age <=0:
+        print("Wrong age!Absolutely wrong!Check carefully inputing years.")
+    else:
+        w_list[0] = "\"" + w_list[0] + "\""  # Предположим кон котэ нация.
+        print(w_list[0], ",", age)
