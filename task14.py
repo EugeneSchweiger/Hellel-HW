@@ -1,11 +1,8 @@
-number=int(input("Enter some number"))
+number=int(input("Enter some number.Let's check,is it even."))
 def is_even(int):
     if (int % 2)== 0:
-        return "It's even"
+        return True
     else:
-        return "It's odd"
+        return False
 print(is_even(number))
-#Looks like this task is first training before writing some serious methods
-#so,let's start with it! :-)
-#Code can be inprowed with checking for str-input, for float numbers and hex numbers
-#Please let me know if this is necessary.
+#Returning boolen is optional,I think... More user-friendly is returning some text
