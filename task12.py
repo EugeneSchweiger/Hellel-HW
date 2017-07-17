@@ -1,13 +1,13 @@
 number=int(input("Enter 3-digit number"))
 def int_sum(a):
-    if not (100<=number<=999):
-        return "incorrect number!"
-    else:
+    if (100<=number<=999):
         int1 = a % 10
         int2 = (a % 100) // 10
         int3 = a // 100
         sum = int1 + int2 + int3
         return sum
+    else:
+        return "incorrect number!"
 
 
 
