@@ -8,5 +8,5 @@ def per_sqr(a,b):
     sqr=round(math.sqrt(p*(p-a)*(p-b)*(p-hyp)),5)
     return sqr,per
 tri_sqr,tri_per=per_sqr(cathet_a,cathet_b)
-print("Triangle square is: %s Triangle perimetre is: %s)"
+print("Triangle Square is: %s Triangle Perimetre is: %s)"
       %(tri_sqr,tri_per))

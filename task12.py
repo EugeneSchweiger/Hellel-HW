@@ -1,11 +1,10 @@
-number=input("Enter 3-digit number")
+number=int(input("Enter 3-digit number"))
 def int_sum(a):
-    if not(len(a)==2):
-        summ=int(a[:1])+int(a[1:2])+int(a[2:])
-        return summ
-    else:
-
-        return None #Or print("Wrong number")
+    int1=a%10
+    int2=(a%100)//10
+    int3=a//100
+    sum=int1+int2+int3
+    return sum
 print("Sum of digits in number,you entered is:" ,int_sum(number))
 
 
