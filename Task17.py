@@ -5,7 +5,7 @@ b=int(input("b="))
 c=int(input("c="))
 
 
-def sovle_quatro_equa(a,b,c):
+def solve_quadratic_equation(a,b,c):
     D = (b ** 2) - (4 * a * c)
     is_d_zero = (D == 0)
     is_d_lesser = (D < 0)
@@ -17,8 +17,8 @@ def sovle_quatro_equa(a,b,c):
         x = ((-b) / 2 * a)
         return x
     elif is_d_grater:
-        x1 = round(((-b + math.sqrt(D)) / 2 * a),5)
-        x2 = round(((-b - math.sqrt(D)) / 2 * a),5)
+        x1 = round(((-b + math.sqrt(D)) / (2 * a)),5)
+        x2 = round(((-b - math.sqrt(D)) / (2 * a)),5)
         return x1,x2
-print("Solution is:",sovle_quatro_equa(a, b, c))
+print("Solution is:",solve_quadratic_equation(a, b, c))
 
