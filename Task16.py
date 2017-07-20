@@ -11,5 +11,4 @@ def if_crash(v1,v2,d=10,d1=4):
     else:
         return False
 result=if_crash(V1,V2)
-print("Wiil they crash?:",result)
-
+print("Wiil they crash?:",result,)
