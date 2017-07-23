@@ -6,7 +6,7 @@ int_count = int(input("enter int count(how many numbers)"))
 int_range = int(input("enter int range(From 0 to....."))
 
 
-def sum_of_random_ints(a,b):
+def middle_ariphmetical_of_some_numbers(a,b):
     sum = 0
     int_range_range = range(a)
     for i in int_range_range:
@@ -15,4 +15,4 @@ def sum_of_random_ints(a,b):
     mid = sum / int_count
     return mid
 
-print(sum_of_random_ints(int_count,int_range))
+print(middle_ariphmetical_of_some_numbers(int_count,int_range))
