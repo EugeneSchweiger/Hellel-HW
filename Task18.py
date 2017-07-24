@@ -6,18 +6,8 @@ chr2=input("Enter second character end press \"Enter\"")
 
 def alphabet_unicodes_sum(a,b):
     chars = "abcdefghijklmnopqrstuvwxyz"
-    if ord(a) > ord(b):
-        chars=chars[::-1]#revercing alphabet
-        str2 = chars[(chars.find(a)):((chars.find(b)) + 1)]#croping string between 2 letters
-        alphabet = (list(str2))#converting into list
-        for i in range(len(alphabet)):
-            alphabet[i] = ord(alphabet[i])#converting list letters to unicode
-        sum = 0
-        for n in alphabet:
-            sum += n#summing unicodes
-        return sum
-#Same,without reversing alphabet
-    else:
+
+    def foo(chars):
         str2 = chars[(chars.find(a)):((chars.find(b)) + 1)]
         alphabet = (list(str2))
         for i in range(len(alphabet)):
@@ -26,6 +16,13 @@ def alphabet_unicodes_sum(a,b):
         for n in alphabet:
             sum += n
         return sum
+
+    if ord(a) > ord(b):
+        chars=chars[::-1]
+        return foo(chars)
+
+    else:
+        return foo(chars)
 
 
 
