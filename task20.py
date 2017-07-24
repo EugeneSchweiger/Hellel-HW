@@ -23,8 +23,10 @@ def list_odd_even_sort(a,b):
             odd_sum = sum(lst_odd)
     if even_sum>odd_sum:
         return lst,"odd sum greater then odd for", even_sum-odd_sum
-    else:
+    elif even_sum<odd_sum:
         return lst,"even sum greater then even for", odd_sum-even_sum
+    else:
+        return "No difference between even and odd numbers sums"
 
 def sum(a):
     sum=0
