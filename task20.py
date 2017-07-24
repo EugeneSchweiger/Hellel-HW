@@ -16,15 +16,15 @@ def list_odd_even_sort(a,b):
     ###creating two lists for even and odd
     for i in range(a):### summing lists
         if lst[i]%2:
-            lst_even[i]=lst[i]
-            even_sum=sum(lst_even)
-        else:
             lst_odd[i]=lst[i]
-            odd_sum = sum(lst_odd)
+        else:
+            lst_even[i]=lst[i]
+    even_sum=sum(lst_even)
+    odd_sum = sum(lst_odd)
     if even_sum>odd_sum:
-        return lst,"odd sum greater then odd for", even_sum-odd_sum
+        return lst,"even sum greater then odd for", even_sum-odd_sum
     elif even_sum<odd_sum:
-        return lst,"even sum greater then even for", odd_sum-even_sum
+        return lst,"odd sum greater then even for", odd_sum-even_sum
     else:
         return "No difference between even and odd numbers sums"
 
