@@ -12,13 +12,14 @@ import random
 # def pull_from_two_lists_simular_items(lst1, lst2 ):
 #     lst_common=[0]
 #     for item1 in lst1:
-#         for com1 in lst_common:
-#             if com1 == item1:
-#                 pass
-#             else:
+#         if lst_common[len(lst_common)-1] == item1:
+#             pass
+#         else:
 #                 for item2 in lst2:
 #                     lst_common = list(set(lst_common))
-#                     if item1==item2:
+#                     if lst_common[len(lst_common)] == item2:
+#                         lst2.remove(item2)
+#                     elif item1==item2:
 #                         lst_common.append(item1)
 #                         lst2.remove(item2)
 #     lst_common=list(set(lst_common))
@@ -27,19 +28,27 @@ import random
 """
     Ниже код работает отлично
 """
-
+#
+# def pull_from_two_lists_simular_items(lst1, lst2 ):
+#     count=0
+#     lst_common=[]
+#     for item1 in lst1:
+#         for item2 in lst2:
+#                 if item1==item2:
+#                     lst_common.append(item1)
+#                     count+=1
+#                     lst2.remove(item2)
+#
+#     lst_common=list(set(lst_common))
+#     return lst_common
+"""
+The easiest way!!!EX_task7 was an hint for this one)))
+"""
 def pull_from_two_lists_simular_items(lst1, lst2 ):
-    count=0
-    lst_common=[]
-    for item1 in lst1:
-        for item2 in lst2:
-                if item1==item2:
-                    lst_common.append(item1)
-                    count+=1
-                    lst2.remove(item2)
-
-    lst_common=list(set(lst_common))
-    return lst_common
+    lst1.extend(lst2)
+    lst = lst1
+    lst=list(set(lst))
+    return lst
 
 def fill_list_with_randint(list,rng):
     for i in range(len(list)):
