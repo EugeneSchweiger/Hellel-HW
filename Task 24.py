@@ -11,4 +11,3 @@ while True:
         if choice>rand_int:
             print("Bigger")
     else: print("Wrong number")
-    continue
