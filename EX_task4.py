@@ -1,4 +1,7 @@
 def daylight_saving(month, week_day, day_of_month):
+    #m-month
+    #w-week day
+    #d-day of month
     m=1<=month<=12
     w=1<=week_day<=7
     d=1<=day_of_month<=31
