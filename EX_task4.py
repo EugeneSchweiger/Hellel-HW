@@ -17,12 +17,26 @@ def daylight_saving(month, week_day, day_of_month):
                     return -1
         else:
             print("clock adjustment not needed")
+            return 0
 
     else:
-        print("date input incorrect")
+        if not m and not w:
+            raise ValueError("Invalid input: Incorrect date(month and week day)")
+        elif not m and not d:
+            raise ValueError("Invalid input: Incorrect date(month and day)")
+        elif not w and not d:
+            raise ValueError("Invalid input: Incorrect date(week day and day)")
+        elif not m:
+            raise ValueError("Invalid input: Incorrect date(month)")
+        elif not w:
+            raise ValueError("Invalid input: Incorrect date(week day)")
+        elif not d:
+            raise ValueError("Invalid input: Incorrect date(day)")
 
-    return 0
-m=int(input('enter month(1-12)'))
-w=int(input("enter week day(1-7)"))
-d=int(input("enter day itself(1-31)"))
-print(daylight_saving(m,w,d))
+        else:
+            raise ValueError("Invalid input:Incorrect date")
+
+month=int(input('enter month(1-12)'))
+week_day=int(input("enter week day(1-7)"))
+day=int(input("enter day itself(1-31)"))
+print(daylight_saving(month,week_day,day))
