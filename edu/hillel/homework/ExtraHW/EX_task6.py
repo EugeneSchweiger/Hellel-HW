@@ -45,10 +45,8 @@ import random
 The easiest way!!!EX_task7 was an hint for this one)))
 """
 def pull_from_two_lists_simular_items(lst1, lst2 ):
-    lst1.extend(lst2)
-    lst = lst1
-    lst=list(set(lst))
-    return lst
+    return sorted(list(set(lst1) & set(lst2)))
+
 
 def fill_list_with_randint(list,rng):
     for i in range(len(list)):
@@ -62,8 +60,8 @@ list_one=[0]*list_one_size
 list_two=[0]*list_two_size
 list_one=fill_list_with_randint(list_one,list_one_range)
 list_two=fill_list_with_randint(list_two,list_two_range)
-# list_one=[0,1,1,2,3,4,5]
-# list_two=[1,1,5,2,3,4,0]
+# list_one=[2,3,3,4]
+# list_two=[1,2,4,5,6]
 
 
 

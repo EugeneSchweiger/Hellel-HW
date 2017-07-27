@@ -2,7 +2,7 @@ import math
 print("____________________________________________");
 print("Task #1");
 
-a=10;
+a=int(input());
 b=20;
 c=30;
 print("a=",a);
@@ -90,12 +90,12 @@ while i<6:
         break
 print("____________________________________________");
 print("Task #6");
-a=150;
+a=input();
 b=-2;
 c=220;
 print("a=",a);
 print("b=",b);
 print("c=",c);
-print("Result of (ln(1+c)/-b)**4+|a| is", round((((math.log1p(c)/-b)**4)+math.fabs(a)),5));#надеюсь это последний логарифм на это ночь :-)
+print("Result /n of (ln(1+c)/-b)**4+|a| is", round((((math.log1p(c)/-b)**4)+math.fabs(a)),5));#надеюсь это последний логарифм на это ночь :-)
 print("End of Task #6");
 print("____________________________________________");

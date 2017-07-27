@@ -7,7 +7,7 @@ while True:
         break
     if 1<=choice<=10:
         if choice<rand_int:
-            print("Lesser")
+            print("Your number is smaller")
         if choice>rand_int:
-            print("Bigger")
+            print("Your number is bigger")
     else: print("Wrong number")
