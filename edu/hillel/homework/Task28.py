@@ -3,10 +3,7 @@ lst1=[random.randint(0,5) for i in range(5)]
 lst2=[random.randint(0,5) for i in range(5)]
 
 def list_average(lst):
-    sum=0
-    for i in range(len(lst)):
-        sum+=lst[i]
-    avg=sum/len(lst)
+    avg=sum(lst)/len(lst)
     return avg
 
 def avg(lst):
