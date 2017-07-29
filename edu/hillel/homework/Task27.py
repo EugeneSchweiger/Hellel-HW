@@ -18,12 +18,11 @@ print(lst_2_str(lst))
 
 def list_index_randomizer(lst):
     choise_IDs = [i for i in range(len(lst))]
-    lst2=[]
     i=0
     while i< len(lst):
         choise=int(random.choice(choise_IDs))
-        lst2.append(lst[choise_IDs.pop(choise_IDs.index(choise))])
+        lst.append(lst.pop(choise_IDs.pop(choise_IDs.index(choise))))
         i+=1
-    return lst2
+    return lst
 
 print(lst_2_str(list_index_randomizer(lst)))
