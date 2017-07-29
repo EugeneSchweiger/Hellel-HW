@@ -14,9 +14,9 @@ def lst_2_str(list):
 
 lst=[]
 fill_wiz_odd(lst)
-print(lst)
+print(lst_2_str(lst))
 
-def foo(lst):
+def list_index_randomizer(lst):
     choise_IDs = [i for i in range(len(lst))]
     lst2=[]
     i=0
@@ -26,4 +26,4 @@ def foo(lst):
         i+=1
     return lst2
 
-print(foo(lst))
+print(lst_2_str(list_index_randomizer(lst)))
