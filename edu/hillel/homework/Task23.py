@@ -19,7 +19,3 @@ def max_digit_in_random_num(range1,range2):
 range1 = [-((10 ** 12) - 1),-(10**11)]
 range2= [(10**11),((10 ** 12) - 1)]
 print("Maximal digit is:",max_digit_in_random_num(range1,range2))
-"""
-There is only one thing to add:
-range should be between -(10^12...10^11):(10^11...10^12)
-"""
