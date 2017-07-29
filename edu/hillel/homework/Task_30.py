@@ -14,10 +14,7 @@ def encrypt_wiz_shift(str,shift = 5):
     crypted_text = ''
     for i in range(len(str)):
         char_id = crypo_tab.index(str[i])
-        if char_id + shift >= len(crypo_tab):
-            str[i] = crypo_tab[char_id - len(crypo_tab) + shift]
-        else: str[i] = crypo_tab[char_id + shift]
-    for i in range(len(str)):
+        str[i] = crypo_tab[(char_id + shift) % len(crypo_tab)]
         crypted_text += str[i]
     return crypted_text
 
