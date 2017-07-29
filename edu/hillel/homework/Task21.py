@@ -1,4 +1,10 @@
+def lst_2_str(list):
+    list=", ".join([str(s) for s in list])
+    return list
 
+"""
+Hard way
+"""
 def output_all_nums_with_1_and_7():
     n = 1000
     lst1 = []
@@ -18,11 +24,18 @@ def output_all_nums_with_1_and_7():
         for char_2 in str(item_2):
             if  char_2=="1":
                 lst3.append(item_2)
-    return sorted(list(set(lst3)))
+    return lst_2_str(sorted(list(set(lst3))))
 print(output_all_nums_with_1_and_7())
+
 """
-Task works correctly,however it can be divided in 3 separated methods:
-1.fill_all_ints_with_1_or_7()
-2.if_list_obj_contains_7(list)
-3.if_list_obj_contains_1(list)
+Easy way
 """
+
+def output_all_nums_with_1_and_7(number_1, number_2,rng=1000):
+    lst = []
+    for i in range(rng):
+        if str(number_1) in str(i) and str(number_2) in str(i):
+            lst.append(i)
+    return lst_2_str(lst)
+
+print(output_all_nums_with_1_and_7(1,7,1000))
