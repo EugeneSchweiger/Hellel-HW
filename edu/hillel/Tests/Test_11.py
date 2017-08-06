@@ -1,29 +1,38 @@
 """
-test12
+test11
 """
+
 import pprint
-matrix = [[1,2,3,4],
-          [1,2,3,4],
-          [1,2,3,4],
-          [1,2,3,4],
-          [1,2,3,4],
-          [1,2,3,4],
-          [1,2,3,4],
-          [1,2,3,4]]
+import copy
+lst=[[1,2,3,4,4],[2,3,4,5,8],[1,1,1,1,1],[5,5,5,5,5],[9,5,7,8,6]]
+# pprint.pprint(lst,width=20)
 
-# pprint.pprint(matrix)
-
-def t_matrix(mat):
-    return [[mat[i][j] for i in range(len(mat))] for j in range(len(mat[0]))]
-# pprint.pprint(t_matrix(matrix),width=30)
-
-
+def some_fonction_that_sorts_list_columns_in_interesting_way(lst):
+    lst2=copy.deepcopy(lst)
+    lst3=copy.deepcopy(lst)
+    for i in range(len(lst)):
+        if not i%2:
+            for ii in range(len(lst[i])):
+                lst2[i][ii]=lst[ii][i]
+            lst2[i]=sorted(lst2[i])
+        else:
+            for ii in range(len(lst[i])):
+                lst2[i][ii]=lst[ii][i]
+            lst2[i]=sorted(lst2[i],reverse=True)
+    for x in range(len(lst2)):
+        for xx in range(len(lst2[x])):
+            lst3[x][xx]=lst2[xx][x]
+    return lst3
 
 def print_matrix(mat):
     for i in range(len(mat)):
         for x in mat[i]:
             print(x,end="\t")
         print()
-print_matrix(matrix)
-print_matrix(t_matrix(matrix))
+print_matrix(lst)
+print()
+print_matrix(some_fonction_that_sorts_list_columns_in_interesting_way(lst))
+
+# pprint.pprint(colomns(lst),width=20)
+
 
