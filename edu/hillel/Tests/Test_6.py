@@ -3,11 +3,5 @@ test6
 """
 
 import random
-
-# lst=[]
-# for i in range(10):
-#     lst.append(random.randint(-10**100,10**100))
-# print(lst)
-
-lst=[random.randint(-10**10,10**10) for i in range(10)]
-print(lst)
+primes = lambda rang: [num for num in range(2, rang) if not 0 in map(lambda z: num % z, range(2,(num//2)+1))]
+print([random.choice(list(map(int, primes(10**3)))) for i in range(10)])

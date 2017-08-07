@@ -5,7 +5,6 @@ test11
 import pprint
 import copy
 lst=[[1,2,3,4,4],[2,3,4,5,8],[1,1,1,1,1],[5,5,5,5,5],[9,5,7,8,6]]
-# pprint.pprint(lst,width=20)
 
 def some_fonction_that_sorts_list_columns_in_interesting_way(lst):
     lst2=copy.deepcopy(lst)
@@ -33,6 +32,5 @@ print_matrix(lst)
 print()
 print_matrix(some_fonction_that_sorts_list_columns_in_interesting_way(lst))
 
-# pprint.pprint(colomns(lst),width=20)
 
 
