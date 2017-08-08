@@ -2,35 +2,43 @@
 test11
 """
 
-import pprint
-import copy
-lst=[[1,2,3,4,4],[2,3,4,5,8],[1,1,1,1,1],[5,5,5,5,5],[9,5,7,8,6]]
+import random
 
-def some_fonction_that_sorts_list_columns_in_interesting_way(lst):
-    lst2=copy.deepcopy(lst)
-    lst3=copy.deepcopy(lst)
-    for i in range(len(lst)):
-        if not i%2:
-            for ii in range(len(lst[i])):
-                lst2[i][ii]=lst[ii][i]
-            lst2[i]=sorted(lst2[i])
-        else:
-            for ii in range(len(lst[i])):
-                lst2[i][ii]=lst[ii][i]
-            lst2[i]=sorted(lst2[i],reverse=True)
-    for x in range(len(lst2)):
-        for xx in range(len(lst2[x])):
-            lst3[x][xx]=lst2[xx][x]
-    return lst3
+matrix =[]
+line_count = 5
+column_count = 8
+
+def t_matrix(mat):
+    return [[mat[i][j] for i in range(len(mat))] for j in range(len(mat[0]))]
 
 def print_matrix(mat):
     for i in range(len(mat)):
         for x in mat[i]:
             print(x,end="\t")
         print()
-print_matrix(lst)
-print()
-print_matrix(some_fonction_that_sorts_list_columns_in_interesting_way(lst))
 
 
+def create_matrix(mat,line_count,column_count):
+    for i in range(line_count):
+        line = []
+        for x in range(column_count):
+            item = random.randrange(10)
+            line.append(item)
+        mat.append(line)
+    return mat
 
+
+def some_kind_of_sorting(mat):
+    for i in range(len(mat)):
+        if i % 2:
+            mat[i].sort()
+        else:
+            mat[i].sort(reverse=True)
+    return mat
+#Дошло наконец,зачем нужны транспонированные матрицы:в них строки становятся стоблцами,а столбцы-строками
+#далее-просто отсортировать четные и нечётные строки и заново транспонировать
+new_matrix=create_matrix(matrix,line_count,column_count)
+print("original:")
+print_matrix(new_matrix)
+print("sorted:")
+print_matrix(t_matrix(some_kind_of_sorting(t_matrix(new_matrix))))
