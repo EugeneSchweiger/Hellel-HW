@@ -74,9 +74,9 @@ def update_students_results(group):
                 stud_hw["rank"] = sum(hw_result["task_completion"])
 
     for stud_test in group:
-        for hw_result in test1_results:
-            if stud_test['id'] == hw_result['id']:
-                stud_test['rank'] += sum(hw_result['task_completion'])
+        for test_result in test1_results:
+            if stud_test['id'] == test_result['id']:
+                stud_test['rank'] += sum(test_result['task_completion'])
     return group
 
 
