@@ -1,12 +1,10 @@
 import Human
 class Godzilla:
-    NUMBER_OF_TASKS=37
-    NUMBER_OF_TESTS = 12
-    TEST_WEIGHTS=[1, 1, 1, 2, 2, 2, 4, 4, 4, 8, 8, 15]
+    STOMACH_FREESPACE_LIMIT=0.1
     def __init__(self,stomach_valume):
         self.stomach_volume=stomach_valume
         self.is_hungry=True
-        self.feed_level=self.stomach_volume*0.1
+        self.feed_level=self.stomach_volume*self.STOMACH_FREESPACE_LIMIT
     def eat(self,*human):
         print("_"*60)
         for person in human:
