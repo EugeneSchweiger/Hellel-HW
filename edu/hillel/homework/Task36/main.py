@@ -1,20 +1,9 @@
-import plane,train
-# plane1=plane.Plane(100,1000,12000)
-# train1=train.Train(50,120,2000)
-# plane1.start_turbine()
-# train1.start_engine()
-# plane1.fly(1000)
-# plane1.refuel(60000)
-# plane1.fly(1000)
-# plane1.refuel(6000)
-# plane1.fly(5000)
-#
-# print()
-#
-# train1.move(1000)
+from edu.hillel.homework.Task36.plane import Plane
+from edu.hillel.homework.Task36.train import Train
+import sys
 def main():
-    plane1 = plane.Plane(100, 1000, 12000)
-    train1 = train.Train(50, 120, 2000)
+    plane1 = Plane(100, 1000, 12000)
+    train1 = Train(50, 120, 2000)
     while True:
         try:
             print ()
@@ -74,3 +63,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    print(sys.path)
