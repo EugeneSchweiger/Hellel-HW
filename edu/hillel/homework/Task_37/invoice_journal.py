@@ -25,3 +25,6 @@ class InvoiceJournal():
 
         return [invoice for invoice in self.__invoices if
                             lower_limit <= invoice.date_time <= upper_limit]
+
+
+

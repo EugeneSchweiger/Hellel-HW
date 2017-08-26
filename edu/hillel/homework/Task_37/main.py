@@ -32,33 +32,49 @@ my_store.add_item(item4, 300)
 # my_store.add_item([item1,100],[item2,200],[item3,300],[item4,300])
 
 
-invoice2 = SaleInvoice(my_store)
-invoice2.add_item(item1, 5)
-invoice2.accept()
 invoice1 = SaleInvoice(my_store)
-invoice1.add_item(item1, 10)
-invoice1.add_item(item2, 10)
-invoice1.add_item(item2, 5)
-invoice1.add_item(item3, 10)
+invoice1.add_item(item1, 5)
+invoice1.accept()
+invoice2 = SaleInvoice(my_store)
+invoice2.add_item(item1, 10)
+invoice2.add_item(item2, 10)
+invoice2.add_item(item2, 5)
+invoice2.add_item(item3, 10)
 print(invoice1)
 print(invoice2)
-invoice1.accept()
+invoice2.accept()
+
+"""
+Notice!Invoice2 date changed for correct "journal_date_search"
+As effect we have only shugar(in invoice1) this year
+"""
+invoice2.date_time=datetime.datetime(2016, 8, 25, 23, 59, 59, 999999)
 
 my_store.print_balance()
-invoice1.cancel()
-invoice2.cancel()
+# invoice2.cancel()
+# invoice1.cancel()
 my_store.print_balance()
 
 journal = InvoiceJournal()
-journal.add_invoice(invoice1)
-journal.remove_invoice(invoice1)
 journal.add_invoice(invoice2)
+# journal.remove_invoice(invoice2)
+journal.add_invoice(invoice1)
 
 
 report = Report(journal, my_store)
-report.print_profit_by_item()
-report.print_balance(my_store)
 print("*"*60)
-invcs = journal.get_invoices(datetime.datetime(2017, 8, 25, 23, 59, 59, 999999),
-                             datetime.datetime(2017, 8, 26, 23, 59, 59, 999999))
-print(invcs[0])
+report.print_profit_by_item()
+print("*"*60)
+report.print_profit_by_date(datetime.datetime(2017, 1, 1, 23, 59, 59, 999999),
+                           datetime.datetime(2017, 12, 31, 23, 59, 59, 999999))
+print("*"*60)
+report.print_gross_by_item()
+print("*"*60)
+report.print_gross_by_date(datetime.datetime(2017, 1, 1, 23, 59, 59, 999999),
+                           datetime.datetime(2017, 12, 31, 23, 59, 59, 999999))
+# report.print_balance(my_store)
+# print("*"*60)
+# invcs = journal.get_invoices(datetime.datetime(2017, 8, 25, 23, 59, 59, 999999),
+#                              datetime.datetime(2017, 8, 26, 23, 59, 59, 999999))
+# for i in range(len(invcs)):
+#     print(invcs[i])

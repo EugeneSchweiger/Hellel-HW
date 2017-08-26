@@ -38,16 +38,35 @@ class Report(object):
                 items_profit[record.item] = items_profit.get(record.item, 0) + profit
 
         print("\nProfit by item:")
+        print("between %s and %s"%(date1,date2))
         for item in sorted(items_profit, key=items_profit.get):
             print(self.report_format(item.name, items_profit[item]))
 
     # ----------------------------------------------------------------
     def print_gross_by_item(self, date1=None, date2=None):
-        pass
+
+        items_gross = {}
+        for invoice in self.journal.get_invoices(date1, date2):
+            for record in invoice:
+                gross = record.qty*(record.item.sale_price)
+                items_gross[record.item] = items_gross.get(record.item, 0) + gross
+
+        print("\nGross by item:")
+        for item in sorted(items_gross, key=items_gross.get):
+            print(self.report_format(item.name, items_gross[item]))
 
     # ----------------------------------------------------------------
     def print_gross_by_date(self, date1=None, date2=None):
-        pass
+        items_gross = {}
+        for invoice in self.journal.get_invoices(date1, date2):
+            for record in invoice:
+                gross = record.qty*(record.item.sale_price)
+                items_gross[record.item] = items_gross.get(record.item, 0) + gross
+
+        print("\nGross by item:")
+        print("between %s and %s"%(date1,date2))
+        for item in sorted(items_gross, key=items_gross.get):
+            print(self.report_format(item.name, items_gross[item]))
 
     # ----------------------------------------------------------------
     def print_balance(self, store):
